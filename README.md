@@ -1,3 +1,9 @@
+# DISCLAIMER
+
+## Im currently working on this project, so this section might be still not finished but feel free to check it out
+
+
+
 # The Analysis
 
 ## 1. What are the most demanded skills for the top 3 most  popular data roles?
@@ -33,7 +39,7 @@ plt.show()
 
 ### Results
 
-[Visualization of Top Skills for Data Industry](Project/images/skill_demand_data_roles.png)
+![Visualization of Top Skills for Data Industry](Project/images/skill_demand_data_roles.png)
 
 ### Insights
 
@@ -65,8 +71,52 @@ They appear as top requirements for Data Analysts, Data Engineers, and Data Scie
 - Azure (19%) and AWS (17%) suggest growing expectations for cloud-based machine learning deployment.
 
 
-### Summary
 
-Overall, the data job market in Poland shows strong alignment around Python and SQL as must-have skills.
-Beyond that, analysts focus more on visualization and business tools, engineers on cloud and big data platforms, and scientists on analytical programming and modeling.
+## 2. How are in-demand skills trending for Data Analysts?
+
+### Visualize Data
+
+```python
+
+plt.figure(figsize=(7,5))
+sns.lineplot(data=df_plot, dashes=False, palette='tab10')
+sns.set_theme(style="ticks")
+sns.despine()
+
+plt.title('Trending Top Skills for Data Analysts in Poland')
+plt.ylabel('Probability in Job Posting (%)')
+plt.xlabel('2023')
+plt.legend().remove()
+
+from matplotlib.ticker import PercentFormatter
+ax = plt.gca()
+ax.yaxis.set_major_formatter(PercentFormatter())
+
+palette = sns.color_palette('tab10')
+offsets = [-2, 2, 5, -4, 7]
+
+texts = []
+for i, col in enumerate(df_plot.columns[:5]):
+    x_pos = len(df_plot) - 1 
+    y_pos = df_plot.iloc[-1, i]
+    label_x = len(df_plot) + 0.5
+    label_y = y_pos + offsets[i]
+
+    # line connecting point to label
+    plt.plot([x_pos, label_x], [y_pos, label_y],
+        color=palette[i], lw=0.8, ls='--', alpha=0.7)
+
+    texts.append(
+        plt.text(
+            label_x,
+            label_y,
+            col,
+            fontsize=9,
+            weight='bold',
+            color=palette[i]
+        )
+    )
+
+```
+![Trending Top Skills for DA in Poland](Project/images/skill_trend_DA.png)
 
