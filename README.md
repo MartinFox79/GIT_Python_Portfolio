@@ -120,3 +120,57 @@ for i, col in enumerate(df_plot.columns[:5]):
 ```
 ![Trending Top Skills for DA in Poland](Project/images/skill_trend_DA.png)
 
+
+## 3. How well do jobs and skills pay for Data Analysts?
+
+### Salary Analysis for Data Industry
+
+#### Visualize Data
+
+```python
+
+sns.boxplot(data = df_PL_top5, x='salary_year_avg', y='job_title_short', order = job_order)
+sns.set_theme(style = 'ticks')
+
+plt.title('Salary Distribution in Poland for Top Data Roles')
+plt.xlabel('Yearly Salary (in USD)')
+plt.ylabel('')
+plt.xlim(0, 600000)
+ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+plt.show()
+
+```
+
+#### Results
+
+![Salary Distribution of Data Jobs in Poland](Project/images/salary_distribution.png)
+*Box plot visualizing the salary distributions for the top 5 (Software Engineer was omited due to low data sample) data job titles.*
+
+
+#### Insights
+
+
+💼 Salary Distribution for Top 5 Data-Related Roles in Poland
+
+The boxplot illustrates that the Senior Data Scientist role has the highest median salary among the group, with the smallest overall distribution across job postings — indicating a more consistent pay range.
+
+In contrast, Data Analyst positions tend to cluster below the 100K PLN annual mark. While roles such as Data Engineer, Data Scientist, and Machine Learning Engineer generally offer higher pay potential, their salary distributions are much more dispersed, suggesting greater variability depending on the specific posting.
+
+An important observation is that data-related roles in Poland show no significant outliers on the boxplot, unlike in countries such as the United States, where salary ranges are often more extreme due to higher market diversity and cost of living differences.
+
+*It is worth noting that the chart presents the top five most common data-related roles in Poland. However, the Software Engineer position — originally ranked fifth — was excluded due to a limited sample size, and the Machine Learning Engineer role was included instead.*
+
+
+### Highest Paid & Most In-Demand Skills for Data Analysts in the 
+
+![The Highest Paid & Most In-Demand Skills for Data Analysts in the US](Project/images/Skills in demand and top paid.png)
+
+#### Insights
+
+- The top graph shows specialized technical skills like 'aws', 'mongo' or 'hadoop'. They are associated with higher salaries, some reaching above $150K, suggesting that advanced technical niche skills can increase earning potential.
+
+- The bottom chart highlights that foundational skills such as Excel, Power BI, and Python are among the most in-demand in the job market, even though they do not necessarily correspond to the highest salaries. This emphasizes the importance of these core competencies for employability in data analysis roles, while also suggesting that they may offer limited leverage in salary negotiations.
+
+- There is no overlap between these two graphs, indicating that the most in-demand skills do not necessarily lead to higher-paying jobs, but rather improve employability. To increase salary potential, it is advisable to develop specialized expertise in a particular skill, such as 'aws' or 'mongo'.
+
