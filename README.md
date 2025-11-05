@@ -1,7 +1,39 @@
-# DISCLAIMER
+# Overview
 
-## Im currently working on this project, so this section might be still not finished but feel free to check it out
 
+
+
+# The Questions
+
+Below are the questions I want to answer in my project:
+
+1. What are the skills most in demand for the top 3 most popular data roles?
+2. How are in-demand skills trending for Data Analysts?
+3. How well do jobs and skills pay for Data Analysts?
+4. What are the optimal skills for data analysts to learn? (High Demand and High Paying)?
+
+*According to the Polish job market*
+
+# Tools I Used
+
+For this project, to get the most valuable insights I used power of several key tools:
+
+* Python: The main tool and core of this project, allowing me to analyze the data and find cricital insights. To make the analysis more valuable I used following Python libraries:
+    * Pandas Library: Used to analyze the data.
+    * Matplotlib Library: used to visualize the data.
+    * seaborn library: mainly used to create more advanced visuals in project.
+
+* Jupyte Notebook: Tool I used to run Python scripts which let me to easily include notes and keep track of the project more visualy pleasing
+* Visual Studio Code: Program used to execute and write those Python scripts
+* Git & GitHub: Essential for sharing my Python code and project
+
+# Data Preparation and Cleanup
+
+This section outlines all necessary steps taken to prepare the data for analysis, ensuring accuracy and usability.
+
+## Import & Clean Up Data
+
+I started by importing necessary libraries and loading the dataset. followed by initial data cleaning tasks to ensure the data is valid for further analysis
 
 
 # The Analysis
@@ -217,3 +249,15 @@ plt.show()
 - Analyst tools (colored oragne) are the biggest fraction of technologies, where tableu and excel are the most common in job postings. Tableu looks like good skill to learn, as its really common in job postings, giving one of the highest salaries
 
 - The cloud technology is not as common in job postings, and apperas only as two skills on the visual (azure and gcp) but you can expect them, to be high salary jobs as the cloud technology become more and more relewant in the Analytics field
+
+
+
+# What I Learned
+
+Throughout this project, I gained a deeper understanding of both data analysis workflows and the Polish job market for data professionals. I strengthened my technical abilities in Python, including data manipulation with Pandas and creating meaningful visualizations using Matplotlib and Seaborn. I also improved my ability to structure analyses clearly in Jupyter Notebook, combining code, visuals, and interpretations in a way that communicates insights effectively.
+
+From a research perspective, I learned how to identify and compare job roles, analyze trends in skill demand over time, and evaluate salary distributions. This allowed me to recognize which skills are universally essential across data roles (like Python and SQL), which are role-specific, and which skills can increase earning potential.
+
+Additionally, I gained insight into how high-demand skills are not always the highest paying, and that the most optimal path for a Data Analyst is often to build a strong foundation first (Excel, SQL, Python, Power BI), then expand into more specialized or cloud-oriented skills to grow salary potential.
+
+Overall, this project helped me improve not only my technical proficiency, but also my ability to translate data into actionable career insights — which is exactly what Data Analysis is about.
