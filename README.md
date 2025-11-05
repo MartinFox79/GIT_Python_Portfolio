@@ -174,3 +174,46 @@ An important observation is that data-related roles in Poland show no significan
 
 - There is no overlap between these two graphs, indicating that the most in-demand skills do not necessarily lead to higher-paying jobs, but rather improve employability. To increase salary potential, it is advisable to develop specialized expertise in a particular skill, such as 'aws' or 'mongo'.
 
+## 4. What is the most optimal skill to learn for Data Analysts?
+
+#### Visualize Data
+
+```python
+sns.scatterplot(
+    data = df_plot,
+    x= 'skill_percent',
+    y= 'median_salary',
+    hue= 'technology'
+)
+
+sns.despine()
+sns.set_theme(style = 'ticks')
+
+texts = []
+for i, txt in enumerate(df_DA_skills_high_demand.index):
+    texts.append(plt.text(df_DA_skills_high_demand['skill_percent'].iloc[i], df_DA_skills_high_demand['median_salary'].iloc[i], txt))
+
+#Adjust text to avoid overlap
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='grey'))
+
+plt.xlabel('Percent of Data Analyst Jobs')
+plt.ylabel('Median Yearly Salary')
+plt.title('Most optimal Skills for Data Analysts in Poland')
+
+from matplotlib.ticker import PercentFormatter
+ax = plt.gca()
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
+plt.tight_layout()
+plt.show()
+```
+
+### Results
+![Most Optimal Skills for Data Analysts in the US](Project/images/Optima skills dor DA.png)
+
+#### Insights:
+- The scatter plot shows that most of the 'programming'  skilss (colored blue) tend to cluster at higher salary levels compared to other categories, indicatin that programming expertise might offer greater salary benefits within the data analytics field.
+
+- Analyst tools (colored oragne) are the biggest fraction of technologies, where tableu and excel are the most common in job postings. Tableu looks like good skill to learn, as its really common in job postings, giving one of the highest salaries
+
+- The cloud technology is not as common in job postings, and apperas only as two skills on the visual (azure and gcp) but you can expect them, to be high salary jobs as the cloud technology become more and more relewant in the Analytics field
